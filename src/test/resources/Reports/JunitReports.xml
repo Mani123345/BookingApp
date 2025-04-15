@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="56.789" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="to valid the cancellation Functionalities" name="To valid the cancellation in Booking.com" time="56.691">
+<system-out><![CDATA[
+Given The user need to Book the application.................................passed
+When The user now Select the Hotel..........................................passed
+And the user need to reserve the Hotel and fill all details.................passed
+And The user Confirm the booking............................................passed
+And The user click the cancellation btn.....................................passed
+Then The user receive the cancellation Message or email.....................passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -1,9 +1,19 @@
 package org.stepdefinition;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.base.BaseClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -53,7 +63,7 @@ public class CancellationStep extends BaseClass{
 	}
 
 	@When("The user now Select the Hotel")
-	public void the_user_now_Select_the_Hotel() throws InterruptedException {
+	public void the_user_now_Select_the_Hotel() throws InterruptedException, IOException {
 	    b=new BookingPage();
 	    waitForElement(b.getCloseMap());
 	    if(b.getCloseMap().isDisplayed()) {
@@ -67,12 +77,20 @@ public class CancellationStep extends BaseClass{
 	    	click(b.getFreeCancellation());
 	    }
 	    click(b.getBookWithoutCreditCard());
+	    
+	    File f = new File("E:\\Eclipse\\eclipse\\BookingApp\\src\\test\\resources\\Excel\\Data.xlsx");
+	    Workbook w = new XSSFWorkbook();
+	    Sheet s = w.createSheet("Login");
 	    for(int i=0;i<b.getListOfHotels().size()-5;i++) {
-	    	String hotel = b.getListOfHotels().get(i).getText();
-	    	String rating = b.getRatings().get(i).getText();
-	    	String price = b.getPrices().get(i).getText();
-	        System.out.println(i+". "+hotel+" -> Rating : "+rating+" -> Price : "+price);
+	    	Row r = s.createRow(i);
+	    	for(int j=0;j<1;j++) {
+	    	r.createCell(j).setCellValue(b.getListOfHotels().get(i).getText());
+	    	r.createCell(j+1).setCellValue(b.getRatings().get(i).getText());
+	    	r.createCell(j+2).setCellValue(b.getPrices().get(i).getText());
+	    	}
 	    }
+	    FileOutputStream fo = new FileOutputStream(f);
+	  	w.write(fo);
 	    System.out.println("--------------------");
 	    System.out.println("Enter the HotelNo : ");
 	    int hotelNo = sc.nextInt();

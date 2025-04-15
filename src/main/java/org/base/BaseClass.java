@@ -15,6 +15,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -203,7 +204,11 @@ public class BaseClass {
     public static void assertTrue(boolean bool) {
 	 Assert.assertTrue(bool);
     }
-    
-    
-    
+    public static void getScreenShot(String scrshotName) throws IOException {
+		TakesScreenshot tk =(TakesScreenshot)driver;
+		File source = tk.getScreenshotAs(OutputType.FILE);
+		File destination = new File("src\\test\\resources\\Screenshots\\"+scrshotName+".png");
+        FileUtils.copyFile(source, destination);
+	}
+     
 }
