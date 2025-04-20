@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="96.352" tests="1" skipped="0" failures="1" errors="0">
-<testcase classname="to valid the cancellation Functionalities" name="To valid the cancellation in Booking.com" time="96.078">
-<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[2]/div/div[3]/div[3]/main/form/div[2]/div/div/a&quot;}
-  (Session info: chrome=135.0.7049.85)
+<testsuite name="Cucumber" time="64.972" tests="1" skipped="0" failures="1" errors="0">
+<testcase classname="to valid the cancellation Functionalities" name="To validate the cancellation functionality in Booking.com by invalid Details" time="64.832">
+<failure type="org.openqa.selenium.NoSuchElementException" message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[3]/div/div[3]/div[3]/main/form/div[1]/div/div/div[4]/div/div[2]&quot;}
+  (Session info: chrome=135.0.7049.96)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_442'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [01aa2fb8c188f2cc8bd00af90465d3f0, findElement {using=xpath, value=/html/body/div[2]/div/div[3]/div[3]/main/form/div[2]/div/div/a}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.85, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52290}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52290/devtoo..., se:cdpVersion: 135.0.7049.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01aa2fb8c188f2cc8bd00af90465d3f0">
-<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div[3]/div[3]/main/form/div[2]/div/div/a"}
-  (Session info: chrome=135.0.7049.85)
+Command: [80bfcdb3ee4a8789c72217f5c1b6d104, findElement {using=xpath, value=/html/body/div[3]/div/div[3]/div[3]/main/form/div[1]/div/div/div[4]/div/div[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.96, chrome: {chromedriverVersion: 135.0.7049.95 (de2eb485a195..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61629}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61629/devtoo..., se:cdpVersion: 135.0.7049.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 80bfcdb3ee4a8789c72217f5c1b6d104">
+<![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"/html/body/div[3]/div/div[3]/div[3]/main/form/div[1]/div/div/div[4]/div/div[2]"}
+  (Session info: chrome=135.0.7049.96)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_442'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [01aa2fb8c188f2cc8bd00af90465d3f0, findElement {using=xpath, value=/html/body/div[2]/div/div[3]/div[3]/main/form/div[2]/div/div/a}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.85, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52290}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52290/devtoo..., se:cdpVersion: 135.0.7049.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01aa2fb8c188f2cc8bd00af90465d3f0
+Command: [80bfcdb3ee4a8789c72217f5c1b6d104, findElement {using=xpath, value=/html/body/div[3]/div/div[3]/div[3]/main/form/div[1]/div/div/div[4]/div/div[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.96, chrome: {chromedriverVersion: 135.0.7049.95 (de2eb485a195..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61629}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61629/devtoo..., se:cdpVersion: 135.0.7049.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 80bfcdb3ee4a8789c72217f5c1b6d104
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -38,17 +38,15 @@ Session ID: 01aa2fb8c188f2cc8bd00af90465d3f0
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at com.sun.proxy.$Proxy22.isDisplayed(Unknown Source)
 	at org.base.BaseClass.isDisplayed(BaseClass.java:131)
-	at org.stepdefinition.CancellationStep.the_user_Confirm_the_booking(CancellationStep.java:129)
-	at ✽.The user Confirm the booking(file:///E:/Eclipse/eclipse/BookingApp/src/test/resources/Features/Cancellation.feature:7)
+	at org.stepdefinition.CancellationStep.the_user_receive_the_Error_Message(CancellationStep.java:180)
+	at ✽.The user receive the Error Message(file:///E:/Eclipse/eclipse/BookingApp/src/test/resources/Features/Cancellation.feature:17)
 ]]>
 </failure>
 <system-out><![CDATA[
 Given The user need to Book the application.................................passed
 When The user now Select the Hotel..........................................passed
-And the user need to reserve the Hotel and fill all details.................passed
-And The user Confirm the booking............................................failed
-And The user click the cancellation btn.....................................skipped
-Then The user receive the cancellation Message or email.....................skipped
+And the user need to reserve the Hotel and fill all details"invalid"........passed
+Then The user receive the Error Message.....................................failed
 ]]></system-out>
 </testcase>
 </testsuite>

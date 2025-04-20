@@ -75,7 +75,7 @@ $(document).ready(function() {
   <tbody>
     <tr class="info">
       <td>Booking</td>
-      <td>15 Apr 2025, 09:23</td>
+      <td>20 Apr 2025, 09:39</td>
     </tr>
   </tbody>
 </table>
@@ -120,17 +120,19 @@ $(document).ready(function() {
 
 
 <div class="tags indention">
+    <b>Tags:</b>
+       <a href="report-tag_4089311534.html">@smoke</a>
 </div>
 
 
-  <span class="lead-duration duration">1:26.817</span>
+  <span class="lead-duration duration">48.666</span>
 
 
   <span data-toggle="collapse" class=" collapsable-control" data-target="#element-1">
 
 <div class="brief failed">
   <span class="keyword indention">Scenario</span>
-  <span class="name">To valid the cancellation in Booking.com</span>
+  <span class="name">To validate the cancellation functionality in Booking.com by invalid Details</span>
 
 
      <i class="chevron fa fa-fw"></i>
@@ -161,7 +163,7 @@ $(document).ready(function() {
             <span class="keyword indention">Before</span>
               <span class="location name">org.stepdefinition.Hooks.before()</span>
 
-  <span class="lead-duration duration">8.349</span>
+  <span class="lead-duration duration">4.339</span>
 
           </div>
 
@@ -194,38 +196,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-Given passed">
-  <span class="keyword indention">Given</span>
-  <span class="name">The user need to Book the application</span>
-
-  <span class="lead-duration duration">29.597</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
 <div class="brief step-name-When passed">
   <span class="keyword indention">When</span>
   <span class="name">The user now Select the Hotel</span>
 
-  <span class="lead-duration duration">13.108</span>
+  <span class="lead-duration duration">7.424</span>
 
 </div>
 
@@ -250,9 +225,9 @@ $(document).ready(function() {
 
 <div class="brief step-name-And passed">
   <span class="keyword indention">And</span>
-  <span class="name">the user need to reserve the Hotel and fill all details</span>
+  <span class="name">the user need to reserve the Hotel and fill all details<span class="argument">&quot;invalid&quot;</span></span>
 
-  <span class="lead-duration duration">11.994</span>
+  <span class="lead-duration duration">11.155</span>
 
 </div>
 
@@ -275,11 +250,11 @@ $(document).ready(function() {
       <div class="step">
 
 
-<div class="brief step-name-And failed">
-  <span class="keyword indention">And</span>
-  <span class="name">The user Confirm the booking</span>
+<div class="brief step-name-Then failed">
+  <span class="keyword indention">Then</span>
+  <span class="name">The user receive the Error Message</span>
 
-  <span class="lead-duration duration">32.118</span>
+  <span class="lead-duration duration">30.087</span>
 
 </div>
 
@@ -294,15 +269,15 @@ $(document).ready(function() {
           <a>org.openqa.selenium.NoSuchElementException:</a>
       </div>
       <div id="msg-4" class="collapse collapsable-details  in ">
-        <pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[2]/div/div[3]/div[3]/main/form/div[2]/div/div/a&quot;}
-  (Session info: chrome=135.0.7049.85)
+        <pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;/html/body/div[3]/div/div[3]/div[3]/main/form/div[1]/div/div/div[4]/div/div[2]&quot;}
+  (Session info: chrome=135.0.7049.96)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_442'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [01aa2fb8c188f2cc8bd00af90465d3f0, findElement {using=xpath, value=/html/body/div[2]/div/div[3]/div[3]/main/form/div[2]/div/div/a}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.85, chrome: {chromedriverVersion: 135.0.7049.84 (6c019e560019..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52290}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52290/devtoo..., se:cdpVersion: 135.0.7049.85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 01aa2fb8c188f2cc8bd00af90465d3f0
+Command: [80bfcdb3ee4a8789c72217f5c1b6d104, findElement {using=xpath, value=/html/body/div[3]/div/div[3]/div[3]/main/form/div[1]/div/div/div[4]/div/div[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 135.0.7049.96, chrome: {chromedriverVersion: 135.0.7049.95 (de2eb485a195..., userDataDir: C:\Users\USER\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61629}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61629/devtoo..., se:cdpVersion: 135.0.7049.96, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 80bfcdb3ee4a8789c72217f5c1b6d104
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -322,66 +297,12 @@ Session ID: 01aa2fb8c188f2cc8bd00af90465d3f0
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at com.sun.proxy.$Proxy22.isDisplayed(Unknown Source)
 	at org.base.BaseClass.isDisplayed(BaseClass.java:131)
-	at org.stepdefinition.CancellationStep.the_user_Confirm_the_booking(CancellationStep.java:129)
-	at &#10045;.The user Confirm the booking(file:///E:/Eclipse/eclipse/BookingApp/src/test/resources/Features/Cancellation.feature:7)
+	at org.stepdefinition.CancellationStep.the_user_receive_the_Error_Message(CancellationStep.java:180)
+	at &#10045;.The user receive the Error Message(file:///E:/Eclipse/eclipse/BookingApp/src/test/resources/Features/Cancellation.feature:17)
 </pre>
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-And skipped">
-  <span class="keyword indention">And</span>
-  <span class="name">The user click the cancellation btn</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      </div>
-      <div class="step">
-
-
-<div class="brief step-name-Then skipped">
-  <span class="keyword indention">Then</span>
-  <span class="name">The user receive the cancellation Message or email</span>
-
-  <span class="lead-duration duration">0.000</span>
-
-</div>
-
-
-
-
-
 
 
 
@@ -417,9 +338,9 @@ Session ID: 01aa2fb8c188f2cc8bd00af90465d3f0
         <div class="hook">
           <div class="brief passed">
             <span class="keyword indention">After</span>
-              <span class="location name">org.stepdefinition.Hooks.after(io.cucumber.java.Scenario)</span>
+              <span class="location name">org.stepdefinition.Hooks.after()</span>
 
-  <span class="lead-duration duration">0.866</span>
+  <span class="lead-duration duration">0.779</span>
 
           </div>
 

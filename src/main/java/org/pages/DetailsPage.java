@@ -36,6 +36,10 @@ public class DetailsPage extends BaseClass{
 	@FindBy(xpath = "(//input[@type='checkbox'])[1]")
 	private WebElement freePaperLessConfirmation;
 	
+	@FindBy(xpath = "/html/body/div[3]/div/div[3]/div[3]/main/form/div[1]/div/div/div[4]/div/div[2]")
+	private WebElement invalidEmail;
+	
+
 	@FindBy(xpath = "(//input[@type='text'])[4]")
 	private WebElement fullGuestName;
 	
@@ -102,6 +106,10 @@ public class DetailsPage extends BaseClass{
 
 	public WebElement getInterestInAirportShuttle() {
 		return interestInAirportShuttle;
+	}
+
+	public WebElement getInvalidEmail() {
+		return invalidEmail;
 	}
 
 	public WebElement getNeedFlightForMyTrip() {

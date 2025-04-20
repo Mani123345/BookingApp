@@ -23,17 +23,21 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.pages.BookingPage;
+import org.pages.CheckBooking;
 import org.pages.DetailsPage;
 import org.pages.HomePage;
 import org.pages.PaymentPage;
 import org.pages.ReservePage;
 
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 
 public class CancellationStep extends BaseClass{
 	static HomePage h ;
 	static BookingPage b;
 	boolean displayed;
+	static ReservePage r;
+	static DetailsPage d;
 	Scanner sc = new Scanner(System.in);
 	@Given("The user need to Book the application")
 	public void the_user_need_to_Book_the_application() throws InterruptedException {
@@ -41,13 +45,13 @@ public class CancellationStep extends BaseClass{
 	   sendKeys(h.getGoing(),"chennai");
 	   Thread.sleep(3000);
 	   downArrow(2);
-	   System.out.println("Enter the CheckInDate : ");
-	   String cidate = sc.nextLine();
-	   System.out.print("Enter the CheckOutDate : ");
-	   String codate = sc.nextLine();
+//	   System.out.println("Enter the CheckInDate : ");
+//	   String cidate = sc.nextLine();
+//	   System.out.print("Enter the CheckOutDate : ");
+//	   String codate = sc.nextLine();
 	   try {
-	   calender(h,cidate);
-	   calender(h,codate);
+	   calender(h,"21");
+	   calender(h,"25");
 	   }
 	   catch (Exception e) {
 	    System.out.println("Pass Through.");
@@ -64,6 +68,7 @@ public class CancellationStep extends BaseClass{
 
 	@When("The user now Select the Hotel")
 	public void the_user_now_Select_the_Hotel() throws InterruptedException, IOException {
+       
 	    b=new BookingPage();
 	    waitForElement(b.getCloseMap());
 	    if(b.getCloseMap().isDisplayed()) {
@@ -78,7 +83,7 @@ public class CancellationStep extends BaseClass{
 	    }
 	    click(b.getBookWithoutCreditCard());
 	    
-	    File f = new File("E:\\Eclipse\\eclipse\\BookingApp\\src\\test\\resources\\Excel\\Data.xlsx");
+	    File f = new File("E:\\Eclipse\\eclipse\\BookingApp\\src\\test\\resources\\Excel\\.xlsx");
 	    Workbook w = new XSSFWorkbook();
 	    Sheet s = w.createSheet("Login");
 	    for(int i=0;i<b.getListOfHotels().size()-5;i++) {
@@ -92,22 +97,24 @@ public class CancellationStep extends BaseClass{
 	    FileOutputStream fo = new FileOutputStream(f);
 	  	w.write(fo);
 	    System.out.println("--------------------");
-	    System.out.println("Enter the HotelNo : ");
-	    int hotelNo = sc.nextInt();
-	    click(b.getAllImages().get(hotelNo));
+//	    System.out.println("Enter the HotelNo : ");
+//	    int hotelNo = sc.nextInt();
+	    click(b.getAllImages().get(6));
 	    switchToWindows(1);
 	}
 	
 
-     @When("the user need to reserve the Hotel and fill all details")
-     public void the_user_need_to_reserve_the_Hotel_and_fill_all_details() throws InterruptedException {  
-        ReservePage r = new ReservePage();
+    
+        @When("the user need to reserve the Hotel and fill all details{string}")
+        public void the_user_need_to_reserve_the_Hotel_and_fill_all_details(String type) throws InterruptedException { 
+       if(type.equalsIgnoreCase("valid")) {
+        r = new ReservePage();
 	    click(r.getReserve());
 	    Thread.sleep(2000);
 	    selectByIndex(r.getRooms(),1);
 	    click(r.getConfirmReserve());
 	    Thread.sleep(2000);
-	    DetailsPage d = new DetailsPage();
+	    d = new DetailsPage();
 	    sendKeys(d.getFirstName(),"Manicom");
 	    sendKeys(d.getLastName(),"S");
 	    sendKeys(d.getEmail(),"Abc@gmail.com");
@@ -119,6 +126,20 @@ public class CancellationStep extends BaseClass{
 	    sendKeys(d.getSpecialRequest(),"Seeking a hotel in Chennai for the night of April 10, 2025. Budget is ₹15,000 per night. A hotel with a gym is required");
 	    selectByIndex(d.getEstimatedArrivalTime(),5);
 	    click(d.getFinalDetails()); 
+       }
+       if(type.equalsIgnoreCase("invalid")) {
+    	r = new ReservePage();
+    	click(r.getReserve());
+   	    Thread.sleep(2000);
+   	    selectByIndex(r.getRooms(),1);
+   	    click(r.getConfirmReserve());
+   	    Thread.sleep(2000);
+   	    d = new DetailsPage();
+   	    sendKeys(d.getFirstName(),"Manicom");
+   	    sendKeys(d.getLastName(),"S");
+   	    sendKeys(d.getEmail(),"Abc");
+   	    click(d.getFinalDetails()); 
+       }
 	}
 	
 	@When("The user Confirm the booking")
@@ -134,10 +155,36 @@ public class CancellationStep extends BaseClass{
 	   assertTrue(displayed);
 	}
 
-	@Then("The user receive the cancellation Message or email")
-	public void the_user_receive_the_cancellation_Message_or_email() {
-	    System.out.println("Email Received .  ");
-	    System.out.println("Done Good Job......");
+
+	@Then("The user receive the email{string}")
+	public void the_user_receive_the_email(String email) {
+	    if(email.equalsIgnoreCase("booked")) {
+	    	CheckBooking c = new CheckBooking();
+	    	click(c.getCheckBooking());
+	    	if(c.getCompleteMyBooking().getText().contains("Complete booking")) {
+	    		System.out.println("Hotel Booked.");
+	    		System.out.println("Eamil Received.....");
+	    	}
+	    }
+	    else if(email.equalsIgnoreCase("cancelled")) {
+	    	System.out.println("Email Received .  ");
+		    System.out.println("Done Good Job......");
+	    }
+	    else {
+	    	System.out.println("Not done!");
+	    }
+	}
+
+	@Then("The user receive the Error Message")
+	public void the_user_receive_the_Error_Message() {
+		System.out.println("here........................");
+		System.out.println(isDisplayed(d.getInvalidEmail()));
+	    if(isDisplayed(d.getInvalidEmail())) {
+	    	System.out.println("invalid Details Booking incompleted");
+	    }
+	    else {
+	    	System.out.println("retry...");
+	    }
 	}
 
 }

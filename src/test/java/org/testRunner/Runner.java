@@ -8,9 +8,10 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src\\test\\resources\\Features\\Cancellation.feature",
+@CucumberOptions(features = "src\\test\\resources\\Features",
 glue = "org.stepdefinition",
 dryRun = false,
+tags = "@smoke",
 plugin = {"pretty",
 		"json:src\\test\\resources\\Reports\\JsonReports.json",
 		"junit:src\\test\\resources\\Reports\\JunitReports.xml"}
